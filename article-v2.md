@@ -6,7 +6,7 @@ Symfony, avec Twig pour le templating, reste un choix incontournable dans l’é
 
 Symfony est réputé comme un solide framework backend, et son écosystème frontend a considérablement évolué. Avec la suite Symfony UX, le framework offre désormais des approches intéressantes pour le développement frontend. Twig, le moteur de templates, présente des avantages et des inconvénients comme tout moteur de template, mais il reste un choix solide pour structurer vos vues. De plus, Tailwind CSS permet un stylage rapide et cohérent grâce à ses classes utilitaires.
 
-Les Twig Components sont introduits pour encourager la réutilisabilité et la clarté dans les vues, et peuvent s’intégrer harmonieusement avec Tailwind CSS. Tailwind, en permettant de déclarer le style directement dans le DOM, directement sur le tag HTML concerné, il facilite le stylage rapide des composants Twig. En associant les deux, on peut encapsuler à la fois la structure et l'UI d'un composant. De plus, avec les class components, il est aussi possible d'encapsuler également le comportement du composant. Et ainsi réutiliser le tout à notre guise dans notre application pour gagner un productivité et cohérence.
+Les Twig Components sont introduits pour encourager la réutilisabilité et la clarté dans les vues, et peuvent s’intégrer harmonieusement avec Tailwind CSS. Tailwind, en permettant de déclarer le style directement dans le DOM, facilite la mise en forme rapide des composants Twig. En associant les deux, on peut encapsuler à la fois la structure et l'UI d'un composant. De plus, avec les class components, il est aussi possible d'encapsuler le comportement du composant. Ainsi, on peut réutiliser le tout à notre guise dans notre application pour gagner en productivité et en cohérence.
 
 ## Présentation rapide des outils
 
@@ -31,7 +31,7 @@ Totalement customisable grace à son fichier de configuration `tailwind.config.j
 
 ### Anonymous Components
 
-Prenons un exemple simple, un bouton avec des variantes de couleur et de taille.
+Prenons un exemple simple, un bouton avec des variantes de couleurs et de tailles.
 
 Il existe un approche appelée **CVA** (*Class Variant Authority*), qui centralise la gestion des classes CSS conditionnelles, rendant vos composants modulaires, faciles à faire évoluer et à maintenir. Initialement popularisé dans le monde JavaScript, elle est désormait disponible dans Twig !
 
@@ -207,7 +207,7 @@ Et voilà rien de plus compliqué que ca pour tester vos composants Twig. On tes
 1. **Lisibilité du code**
 
     L'abondance de classes Tailwind dans un même fichier peut rendre les templates volumineux difficiles à lire. Une bonne connaissances des utilities de Tailwind est nécessaire pour préserver une bonne lisibilité.
-    De plus les Twig Components introduisent une nouvelle syntaxe qui peut être un peu déroutante au début mais reste tres proches du HTML.
+    De plus les Twig Components introduisent une nouvelle syntaxe qui peut être un peu déroutante au début mais reste très proche du HTML.
 
 2. **Courbe d’apprentissage**
 
