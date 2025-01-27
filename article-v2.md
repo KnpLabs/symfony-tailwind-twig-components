@@ -4,13 +4,17 @@ Symfony, avec Twig pour le templating, reste un choix incontournable dans l’é
 
 ## Pourquoi associer Tailwind CSS et Twig Components ?
 
-Symfony est réputé comme un solide framework backend, et son écosystème frontend a considérablement évolué. Avec la suite Symfony UX, le framework offre désormais des approches intéressantes pour le développement frontend. Twig, le moteur de templates, présente des avantages et des inconvénients comme tout moteur de template, mais il reste un choix solide pour structurer vos vues. De plus, Tailwind CSS permet un stylage rapide et cohérent grâce à ses classes utilitaires.
+Symfony est réputé comme un solide framework backend, et son écosystème frontend a considérablement évolué. Avec la suite Symfony UX, le framework offre désormais des approches intéressantes pour le développement frontend.
 
-Les Twig Components sont introduits pour encourager la réutilisabilité et la clarté dans les vues, et peuvent s’intégrer harmonieusement avec Tailwind CSS. Tailwind, en permettant de déclarer le style directement dans le DOM, facilite la mise en forme rapide des composants Twig. En associant les deux, on peut encapsuler à la fois la structure et l'UI d'un composant. De plus, avec les class components, il est aussi possible d'encapsuler le comportement du composant. Ainsi, on peut réutiliser le tout à notre guise dans notre application pour gagner en productivité et en cohérence.
+Twig, le moteur de templates, présente des avantages et des inconvénients comme tout moteur de template, mais il reste un choix solide pour structurer vos vues. De plus, Tailwind CSS permet une mise en forme rapide et cohérente grâce à ses classes utilitaires.
+
+Les Twig Components sont introduits pour encourager la réutilisabilité et la clarté dans les vues, et peuvent s’intégrer harmonieusement avec Tailwind CSS. Tailwind, en permettant de déclarer le style directement dans le DOM, facilite la mise en forme rapide des composants Twig.
+
+En associant les deux, on peut encapsuler à la fois la structure et l'UI d'un composant. De plus, avec les class components, il est aussi possible d'encapsuler le comportement du composant. Ainsi, on peut réutiliser le tout à notre guise dans notre application pour gagner en productivité et en cohérence.
 
 ## Présentation rapide des outils
 
-Avant d’explorer leurs synergies, voici un rappel des fonctionnalités principales de chaque outil :
+Avant d’explorer leurs synergies, voici un rappel des fonctionnalités principales de chaque outil:
 
 ### Twig Components
 
@@ -25,7 +29,7 @@ Il existe aussi les **Live Components**, qui permettent de mettre à jour dynami
 
 Tailwind CSS est un framework CSS utility-first. Contrairement aux frameworks CSS traditionnels (comme *Bootstrap*), il favorise l’utilisation de classes utilitaires qui permettent un stylage rapide et sans limites. Il est particulièrement apprécié pour sa flexibilité et son écosystème.
 
-Totalement customisable grace à son fichier de configuration `tailwind.config.js`, Tailwind CSS permet de personnaliser les couleurs, les tailles, les polices, etc. Une bonne configuration est un atout pour une utilisation efficace de Tailwind.
+Totalement customisable grace à son fichier de configuration `tailwind.config.js` pour la v3 ou bien un simple fichier CSS pour la v4, Tailwind CSS permet de personnaliser les couleurs, les tailles, les polices, etc. Une bonne configuration est un atout pour une utilisation efficace de Tailwind.
 
 ## Synergies entre Twig Components et Tailwind CSS
 
@@ -65,7 +69,7 @@ Il existe un approche appelée **CVA** (*Class Variant Authority*), qui centrali
 </{{ as }}>
 ```
 
-Voici notre composant bouton qui accepte trois props : `as`, `variant`, et `size`. Cette approche de composant dite "polymorphic" permet de rendre par défaut le composant comme une balise `button`, mais vous pouvez le changer en `a`, ou autre en passant le tag HTML voulu via la props `as`.
+Voici notre composant `button` qui accepte trois props : `as`, `variant`, et `size`. Cette approche de composant dite "polymorphic" permet de rendre par défaut le composant comme une balise `button`, mais vous pouvez le changer en `a`, ou autre en passant le tag HTML voulu via la props `as`.
 
 #### Usage
 
@@ -99,7 +103,7 @@ Rendu HTML:
 </a>
 ```
 
-Au lieu d'avoir des classes en conflit `bg-primary` et `bg-red-500`, le filtre `tailwind_merge` fusionne les classes en doublon pour n'avoir que `bg-red-500` car on a surcharger la class de notre composant. Et on aura comme résultat un bouton rouge.
+Au lieu d'avoir des classes en conflit comme `bg-primary` et `bg-red-500`, le filtre `tailwind_merge` fusionne les classes en doublon pour ne conserver que `bg-red-500`, car cette classe surcharge `bg-primary`. Et on aura comme résultat un bouton rouge.
 
 *Filtre issue du bundle [tales-from-a-dev/twig-tailwind-extra: 🌱 A Twig extension for Tailwind](https://github.com/tales-from-a-dev/twig-tailwind-extra)*
 
@@ -211,14 +215,14 @@ Et voilà rien de plus compliqué que ca pour tester vos composants Twig. On tes
 
 2. **Courbe d’apprentissage**
 
-    Bien que Tailwind soit facile à utiliser, sa logique utility-first peut dérouter les nouveaux développeurs habitués aux approches basées sur CSS traditionnel.
+    Bien que Tailwind soit facile à utiliser, sa logique utility-first peut dérouter les développeurs habitués aux approches basées sur CSS traditionnel.
     Tailwind reste relativement simple à apprendre et la documentation est très bien faite.
 
 ## Conclusion
 
-Associer Twig Components et Tailwind CSS peut grandement moderniser votre workflow de développement frontend avec Symfony. Ces outils se complètent parfaitement : Twig apporte une structure modulaire, tandis que Tailwind accélère le stylage.
+Associer Twig Components et Tailwind CSS peut grandement moderniser votre workflow de développement frontend avec Symfony. Ces outils se complètent parfaitement : Twig apporte une structure modulaire, tandis que Tailwind accélère la mise en forme.
 
-Cependant, leur utilisation nécessite une bonne organisation et une compréhension des limites pour tirer pleinement parti de leurs synergies. Cette combinaison convient particulièrement aux équipes qui cherchent une approche moderne et modulable un peu à la manière des composants React.
+Cependant, leur utilisation nécessite une bonne organisation et une compréhension des limites pour tirer pleinement parti de leurs synergies. Cette combinaison convient particulièrement aux équipes qui cherchent une approche moderne et modulable, un peu à la manière des composants React.
 
 Pour les plus curieux, vous pouvez retrouver un exemple de cette stack sur notre [repo de demonstration](https://github.com/KnpLabs/symfony-tailwind-twig-components).
 
